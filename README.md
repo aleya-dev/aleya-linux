@@ -15,6 +15,22 @@ to provide a straightforward and simple example of how a distribution could be c
 
 Choises in any code are often made for simplicity over performance, security or any other requirement.
 
+## Getting started
+
+You can experiment with the current state of the package manager (alpaca) in the tools directory.
+
+You can try the following command:
+
+    ./alpaca.py install binutils
+
+You can also specify a version:
+
+    ./alpaca.py install binutils/2.44-1
+    ./alpaca.py install binutils/lastest
+
+Don't worry, this will not install anything to your regular system (yet).
+You do **not** need to run this command as root.
+
 ## Warning!
 
 Do **not** use this distribution as your main desktop or any production environment.
