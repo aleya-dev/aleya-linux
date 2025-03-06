@@ -1,5 +1,3 @@
-#!/bin/env python3
-
 from alpaca.configuration import config
 from alpaca.logging import logger, enable_debug_logging, enable_verbose_logging
 from alpaca.package_manager import PackageManager
