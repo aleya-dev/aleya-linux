@@ -10,10 +10,10 @@ of them. In fact, it likely isn't.
 
 ## Then why? What is it?
 
-The author's idea behind Aleya Linux is mainly to "see if I can do it". The secondairy idea is
+The author's idea behind Aleya Linux is mainly to "see if I can do it". The secondary idea is
 to provide a straightforward and simple example of how a distribution could be created by anyone.
 
-Choises in any code are often made for simplicity over performance, security or any other requirement.
+Choices in any code are often made for simplicity over performance, security or any other requirement.
 
 ## Getting started
 
