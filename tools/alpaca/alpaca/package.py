@@ -326,7 +326,6 @@ class Package:
         env["ld_flags"] = config.ld_flags
         env["make_flags"] = config.make_flags
         env["ninja_flags"] = config.ninja_flags
-        env["filesystem_root"] = config.filesystem_root
 
         return env
 

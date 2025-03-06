@@ -36,12 +36,6 @@ class Configuration:
             "environment", "target_platform", fallback="aleya-linux-gnu"
         )
 
-        self.filesystem_root = get_full_path(
-            os.path.expanduser(
-                config.get("environment", "filesystem_root", fallback="/")
-            )
-        )
-
         self.workspace_path = get_full_path(
             config.get("environment", "workspace_path", fallback="~/alpaca_workspace")
         )
