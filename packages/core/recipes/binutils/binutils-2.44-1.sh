@@ -12,7 +12,8 @@ handle_build() {
     export CFLAGS+=" ${c_flags}"
 
     cd $build_directory
-    $source_directory/binutils-${package_version}/configure --prefix=/usr \
+    $source_directory/binutils-${package_version}/configure \
+        --prefix=/usr \
         --target=${target_architecture}-${target_platform} \
         --disable-nls \
         --enable-gprofng=no \
