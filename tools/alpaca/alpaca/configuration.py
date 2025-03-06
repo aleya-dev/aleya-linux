@@ -1,5 +1,5 @@
-from .utils import get_full_path
-from .logging import logger
+from alpaca.utils import get_full_path
+from alpaca.logging import logger
 import os
 import configparser
 
@@ -36,9 +36,9 @@ class Configuration:
             "environment", "target_platform", fallback="aleya-linux-gnu"
         )
 
-        self.prefix = get_full_path(
+        self.filesystem_root = get_full_path(
             os.path.expanduser(
-                config.get("environment", "default_prefix", fallback="/")
+                config.get("environment", "filesystem_root", fallback="/")
             )
         )
 
@@ -72,7 +72,8 @@ class Configuration:
                 return os.environ.get("ALEYA_CONFIG")
             else:
                 logger.warning(
-                    f"Configuration file specified in ALEYA_CONFIG environment variable does not exist: {aleya_config_env_path}. Ignoring"
+                    "Configuration file specified in ALEYA_CONFIG environment "
+                    f" variable does not exist: {aleya_config_env_path}. Ignoring"
                 )
 
         home_config_path = get_full_path("~/.alpaca")

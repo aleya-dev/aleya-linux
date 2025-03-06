@@ -1,8 +1,8 @@
-from .logging import logger
-from .configuration import config
-from .shell_command import ShellCommand
-from .package_description import PackageDescription, Atom
-from .utils import (
+from alpaca.logging import logger
+from alpaca.configuration import config
+from alpaca.shell_command import ShellCommand
+from alpaca.package_description import PackageDescription, Atom
+from alpaca.utils import (
     is_url,
     is_file_path,
     download_file,
@@ -59,7 +59,7 @@ class Package:
 
         Args:
             build_from_source (bool): Whether to force build the package from source,
-                                      even if a prebuilt binary is available
+                even if a prebuilt binary is available
         """
 
         logger.info(f"Building package {self.description.atom}...")
@@ -288,7 +288,10 @@ class Package:
         )
 
         ShellCommand.exec(
-            f"source {self.description.recipe_path} && (if declare -F {function_name} >/dev/null; then {function_name}; else echo 'Skipping \"{function_name}\". Function not found.'; fi)",
+            f"source {self.description.recipe_path} && "
+            f"(if declare -F {function_name} >/dev/null; then "
+            f"{function_name}; else "
+            f"echo 'Skipping \"{function_name}\". Function not found.'; fi)",
             working_directory=working_dir,
             environment=self._get_environment_variables(),
             print_output=print_output,
@@ -323,6 +326,7 @@ class Package:
         env["ld_flags"] = config.ld_flags
         env["make_flags"] = config.make_flags
         env["ninja_flags"] = config.ninja_flags
+        env["filesystem_root"] = config.filesystem_root
 
         return env
 

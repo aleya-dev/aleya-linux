@@ -1,4 +1,4 @@
-from .logging import logger
+from alpaca.logging import logger
 import subprocess
 import threading
 import os

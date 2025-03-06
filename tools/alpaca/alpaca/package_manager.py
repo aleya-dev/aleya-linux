@@ -1,7 +1,7 @@
-from .package import Package
-from .package_description import Atom
-from .configuration import config
-from .logging import logger
+from alpaca.package import Package
+from alpaca.package_description import Atom
+from alpaca.configuration import config
+from alpaca.logging import logger
 import os
 
 

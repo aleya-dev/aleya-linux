@@ -1,4 +1,4 @@
-from .logging import logger
+from alpaca.logging import logger
 from numbers import Number
 from urllib.parse import urlparse
 import urllib.request

@@ -1,6 +1,6 @@
-from .shell_command import ShellCommand
-from .configuration import config
-from .logging import logger
+from alpaca.shell_command import ShellCommand
+from alpaca.configuration import config
+from alpaca.logging import logger
 from pathlib import Path
 
 

@@ -1,19 +1,18 @@
 #!/bin/env python3
 
-from aleya import (
-    config,
-    alpaca_version_string,
-    logger,
-    enable_debug_logging,
-    enable_verbose_logging,
-    PackageManager,
-)
+from alpaca.configuration import config
+from alpaca.logging import logger, enable_debug_logging, enable_verbose_logging
+from alpaca.package_manager import PackageManager
+
 import argparse
+
+import importlib.metadata
+__version__ = importlib.metadata.version("alpaca")
 
 
 def _create_arg_parser():
     parser = argparse.ArgumentParser(
-        description=f"AlpaCA - The Aleya Package Configuration Assistant ({alpaca_version_string})"
+        description=f"AlpaCA - The Aleya Package Configuration Assistant ({__version__})"
     )
     parser.add_argument(
         "--verbose", "-v", action="store_true", help="Enable verbose output"
@@ -30,7 +29,7 @@ def _create_arg_parser():
     parser.add_argument(
         "--version",
         action="version",
-        version=f"AlpaCA version: {alpaca_version_string}",
+        version=f"AlpaCA version: {__version__}",
     )
 
     subparsers = parser.add_subparsers(dest="command", help="Subcommand help")
