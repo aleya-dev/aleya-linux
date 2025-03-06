@@ -246,7 +246,7 @@ class Package:
             os.path.join(self.description.get_recipe_directory(), source)
         ):
             logger.verbose(f"Source {source} is relative to the recipe directory")
-            shutil.copy(source, source_path)
+            shutil.copy(os.path.join(self.description.get_recipe_directory(), source), source_path)
         # If not, look relative to all the repositories, in order
         else:
             found = False
