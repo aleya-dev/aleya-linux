@@ -160,7 +160,15 @@ def check_file_hash_from_string(path: str, hash: str) -> bool:
         logger.error(f"File {path} does not exist. Could not verify sha256 hash.")
         return False
 
-    return get_file_hash(path) == hash
+    file_hash = get_file_hash(path)
+
+    if file_hash != hash:
+        logger.error(
+            f"File {path} has hash {file_hash}, expected {hash}. File may be corrupt."
+        )
+        return False
+
+    return True
 
 
 def check_file_hash_from_file(path: str) -> bool:
