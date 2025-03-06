@@ -81,6 +81,9 @@ class Package:
                 else:
                     logger.info("Binary cache hash mismatch. Rebuilding...")
                     require_build = True
+            else:
+                logger.info("Binary cache not found. Rebuilding...")
+                require_build = True
 
         if not require_build:
             extract_tar(artifact_file_path, self._get_package_package_directory())
