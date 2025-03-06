@@ -6,7 +6,7 @@ dependencies=()
 build_dependencies=()
 sources=("https://ftp.gnu.org/gnu/binutils/binutils-${package_version}.tar.xz")
 sha256sums=('ce2017e059d63e67ddb9240e9d4ec49c2893605035cd60e92ad53177f4377237')
-package_options=('testoption')
+package_options=()
 
 handle_build() {
     export CFLAGS+=" ${c_flags}"
